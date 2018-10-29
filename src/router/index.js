@@ -11,7 +11,7 @@ export default new Router({
     name: 'Dashboard',
     component: Dashboard
   },{
-    path: '/article',
+    path: '/article/:id',
     name: 'View',
     component: View
   }],
