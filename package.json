@@ -9,6 +9,12 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "dns": "^0.2.2",
+    "form-data": "^2.3.3",
+    "fs": "0.0.1-security",
+    "net": "^1.0.2",
+    "node-fetch": "^2.2.0",
+    "request": "^2.88.0",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1"
   },
