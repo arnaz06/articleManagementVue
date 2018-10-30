@@ -21,7 +21,7 @@
           <th >{{article.title}}</th>
           <th >{{article.CreatedAt}}</th>
           <th > <router-link :to="`/article/`+article.ID" > <button type="button" class="btn btn-success btn-sm">View  </button></router-link>
-              <button type="button" class="btn btn-primary btn-sm">Edit</button>
+              <router-link :to="`/edit/`+article.ID" > <button type="button" class="btn btn-primary btn-sm">Edit</button> </router-link>
               <button v-on:click="deleteArticle(article.ID)" type="button" class="btn btn-danger btn-sm">Delete</button>
           </th>
         </tr>

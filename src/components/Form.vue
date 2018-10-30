@@ -19,7 +19,7 @@
 </template>
 <script>
   import axios from 'axios'
-  import fetch from 'node-fetch'
+  import swal from 'sweetalert2'
   export default {
     name: 'Table',
     data () {
@@ -43,23 +43,25 @@
           },
           data:formData
         })
-        // fetch('http://localhost:8081/v1/article',{
-        //   method: 'post',
-        //   body:{
-        //     title: this.title,
-        //     content: this.content,
-        //     thumbnail: formData
-        //   }
-        // })
         .then((response)=>{
           console.log('lalala: ', response)
+          swal(
+              'Article Created',
+              'You clicked the button!',
+              'success'
+            )
+          this.$router.push('/')
         }).catch(err=>{
           console.log('err: ', err)
+           swal(
+              'Something Went wrong',
+              'You clicked the button!',
+              'warning'
+            )
         })
       },
       handleFileUpload(event){
         this.thumbnail= event.target.files[0]
-        console.log(this.thumbnail)
       }
     }
   }
