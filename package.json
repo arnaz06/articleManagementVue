@@ -12,9 +12,11 @@
     "dns": "^0.2.2",
     "form-data": "^2.3.3",
     "fs": "0.0.1-security",
+    "image-downloader": "^3.4.1",
     "net": "^1.0.2",
     "node-fetch": "^2.2.0",
     "request": "^2.88.0",
+    "sweetalert2": "^7.28.11",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1"
   },
