@@ -3,20 +3,17 @@
 <template>
   <div>
     <h1>{{ msg }}</h1>
-    <button class="btn btn-warning">New Article</button>
-    <app-search></app-search>
+    <router-link :to="`/new-article`" ><button class="btn btn-warning">New Article</button></router-link>
     <app-table></app-table>
   </div>
 </template>
 
 <script>
   import Table from './Table.vue'
-  import Search from './Search.vue'
   export default {
     name: 'Dashboard',
     components:{
       'app-table': Table,
-      'app-search': Search,
     },
     data () {
       return {

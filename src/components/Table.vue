@@ -1,5 +1,11 @@
 <template>
   <div class="container" style="margin:auto; width:750px; margin-top: 50px">
+    <form>
+        <div class="form-group">
+          <label for="search">Search Based on Title</label><br>
+          <input v-model="search" type="text">
+        </div>
+      </form>
     <table class="table">
       <thead>
         <tr>
@@ -32,6 +38,16 @@
     data () {
       return {
         articles:[],
+        search:''
+      }
+    },
+    watch:{
+      search(){
+        if(this.search==''){
+          this.getAllArticle()
+        }else{
+          this.searchArticle()
+        }
       }
     },
     mounted(){
@@ -55,6 +71,18 @@
         }).then(response=>{
           console.log('article deleted', id)
           this.getAllArticle()
+        }).catch(err=>{
+          console.log('err: ', err)
+        })
+      },
+      searchArticle(){
+        let url='http://localhost:8081/v1/articles/search?title='+this.search
+        axios({
+          method:'get',
+          url:url
+        }).then(response=>{
+          console.log('lalala: ', response.data)
+          this.articles= response.data
         }).catch(err=>{
           console.log('err: ', err)
         })
